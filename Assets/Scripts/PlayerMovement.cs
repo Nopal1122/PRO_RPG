@@ -1,36 +1,68 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Tilemaps;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 5;
+    public float speed = 5f;
     public int facingDirection = 1; // 1 for right, -1 for left
     public Rigidbody2D rb;
     public Animator anim;
 
-    void FixedUpdate() 
+    private bool isKnockBack;
+    
+
+    public Player_Combat player_Combat;
+
+    private void Update()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-
-        if(horizontal > 0 && transform.localScale.x<0 || horizontal < 0 && transform.localScale.x > 0)
+        if(Input.GetButtonDown("Slash"))
         {
-            Flip();
-        } 
-        
-
-        anim.SetFloat("horizontal", Mathf.Abs(horizontal));
-        anim.SetFloat("vertical", Mathf.Abs(vertical));
-
-        rb.velocity = new Vector2(horizontal, vertical) * speed;
+            player_Combat.attack();
+        }
     }
+    void FixedUpdate()
+    {
+        if (!isKnockBack)
+        {
+            float horizontal = Input.GetAxis("Horizontal");
+            float vertical = Input.GetAxis("Vertical");
 
+            // Balik arah player jika bergerak ke arah berlawanan dari skala saat ini
+            if ((horizontal > 0 && transform.localScale.x < 0) ||
+                (horizontal < 0 && transform.localScale.x > 0))
+            {
+                Flip();
+            }
+
+            // Set animasi gerakan
+            anim.SetFloat("horizontal", Mathf.Abs(horizontal));
+            anim.SetFloat("vertical", Mathf.Abs(vertical));
+
+            // Gerakkan pemain
+            rb.velocity = new Vector2(horizontal, vertical) * speed;
+        }
+    }
 
     void Flip()
     {
         facingDirection *= -1;
-        transform.localScale = new Vector3(transform.localScale.x* -1, transform.localScale.y, transform.localScale.z);
+        transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+    }
+
+    public void KnockBack(Transform enemy,float force,float stunTime)
+    {
+        isKnockBack = true;
+
+        Vector2 direction = (transform.position - enemy.position).normalized;
+        rb.velocity = direction * force; // Bisa disesuaikan knockback speed-nya
+        StartCoroutine(KnockBackCounter(stunTime)); // Durasi knockback, bisa disesuaikan
+    }
+    IEnumerator KnockBackCounter(float stunTime)
+
+    {
+        yield return new WaitForSeconds(stunTime);
+        rb.velocity = Vector2.zero; // Hentikan gerakan knockback
+        isKnockBack = false; 
     }
 }
