@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: f653e75ea1f3a3945b718bff0d951313
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - grassPrefab: {fileID: 3392479685050704714, guid: 22c003996a2d12c4eb24df306e769480, type: 3}
+  - treePrefab: {fileID: 7451221483153107116, guid: 9c5a1e3794e559e48970def15ad43402, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
