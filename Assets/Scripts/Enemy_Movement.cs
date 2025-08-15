@@ -27,14 +27,15 @@ public class Enemy_Movement : MonoBehaviour
         
         rb = GetComponent<Rigidbody2D>();  // Ambil komponen Rigidbody2D pada musuh
         anim = GetComponent<Animator>();
-        ChngeState(EnemyState.Idle);       // Atur status awal musuh menjadi Idle// Ambil komponen Animator pada musuh
+        ChangeState(EnemyState.Idle);       // Atur status awal musuh menjadi Idle// Ambil komponen Animator pada musuh
     }
 
     void Update()
     {
-        CheckForPlayer();
+        if (enemyState != EnemyState.Knockback){
+            CheckForPlayer();
 
-        if(attackCooldownTimer > 0)
+        if (attackCooldownTimer > 0)
         {
             attackCooldownTimer -= Time.deltaTime; // Kurangi timer cooldown serangan
         }
@@ -45,6 +46,7 @@ public class Enemy_Movement : MonoBehaviour
         else if (enemyState == EnemyState.Attacking)
         {
             rb.velocity = Vector2.zero; // Hentikan gerakan musuh saat menyerang
+        }
         }
     }
 
@@ -81,27 +83,27 @@ public class Enemy_Movement : MonoBehaviour
             if (Vector2.Distance(transform.position, player.position) <= attackRange & attackCooldownTimer <= 0)
             {
                 attackCooldownTimer = attackCooldown; // Reset timer cooldown serangan
-                ChngeState(EnemyState.Attacking); // Ubah status ke Attacking jika dalam jarak serangan
+                ChangeState(EnemyState.Attacking); // Ubah status ke Attacking jika dalam jarak serangan
 
 
             }
             else if (Vector2.Distance(transform.position, player.position) > attackRange && enemyState != EnemyState.Attacking)
             {
-                ChngeState(EnemyState.Chasing); // Ubah status ke Chasing jika pemain berada di luar jarak serangan
+                ChangeState(EnemyState.Chasing); // Ubah status ke Chasing jika pemain berada di luar jarak serangan
 
             }
         }
         else
         {
             rb.velocity = Vector2.zero;     // Hentikan gerakan musuh
-            ChngeState(EnemyState.Idle); // Ubah status ke Idle jika tidak ada pemain yang terdeteksi
+            ChangeState(EnemyState.Idle); // Ubah status ke Idle jika tidak ada pemain yang terdeteksi
         }   
         }
    
 
    
     // Mengubah status musuh dan mengatur animasi sesuai status
-    void ChngeState(EnemyState newState)
+    public void ChangeState(EnemyState newState)
     {
         // Matikan animasi dari status sebelumnya
         if (enemyState == EnemyState.Idle)
@@ -136,5 +138,6 @@ public enum EnemyState
 {
     Idle,
     Chasing,
-    Attacking
+    Attacking,
+    Knockback
 }

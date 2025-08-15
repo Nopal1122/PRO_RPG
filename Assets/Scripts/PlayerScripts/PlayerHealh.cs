@@ -4,8 +4,6 @@ using UnityEngine;
 using TMPro;
 public class PlayerHealh : MonoBehaviour
 {
-    public int currentHealth;
-    public int maxHealth;
 
     public TMP_Text healthText;
     public Animator healtTextAnim;
@@ -13,15 +11,15 @@ public class PlayerHealh : MonoBehaviour
 
     private void Start()
     {
-        healthText.text = "HP: " + currentHealth + "/" + maxHealth;
+        healthText.text = "HP: " + StatsManager.Instance.currentHealth + "/" + StatsManager.Instance.maxHealth;
     }
     public void ChangeHealth(int amount)
     {
 
-        currentHealth += amount;
+        StatsManager.Instance.currentHealth += amount;
         healtTextAnim.Play("TextUpdate");
-        healthText.text = "HP: " + currentHealth + "/" + maxHealth;
-        if (currentHealth <= 0)
+        healthText.text = "HP: " + StatsManager.Instance.currentHealth + "/" + StatsManager.Instance.maxHealth;
+        if (StatsManager.Instance.currentHealth <= 0)
         {
             gameObject.SetActive(false);
         }

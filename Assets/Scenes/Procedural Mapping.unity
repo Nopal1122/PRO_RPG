@@ -204,7 +204,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &643789690
 GameObject:
@@ -357,7 +357,7 @@ Transform:
   m_Children:
   - {fileID: 643789693}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!156049354 &892530126
 Grid:
@@ -412,11 +412,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6b01f970462dbc147a66464693851f52, type: 2}
   - {fileID: 11400000, guid: 5886520ccd12e9042a8ff036d6105b59, type: 2}
   treePrefab: {fileID: 8334902486504789472, guid: 23c68c87b2b35fa4ba9ccfbfbba6b9ca, type: 3}
-  width: 100
-  height: 100
+  width: 150
+  height: 150
   treeSpawnChance: 0.03
   noiseScale: 0.1
-  islandCurve: 1
+  islandCurve: 0.5
   seed: 10
 --- !u!4 &1333769850
 Transform:
@@ -431,5 +431,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
