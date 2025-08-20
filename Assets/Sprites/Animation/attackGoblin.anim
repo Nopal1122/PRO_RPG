@@ -26,7 +26,7 @@ AnimationClip:
     - time: 0.2
       value: {fileID: 280410645, guid: 2d1dfb3d142580f42bd947f905fc612a, type: 3}
     - time: 0.3
-      value: {fileID: 746660822, guid: 2d1dfb3d142580f42bd947f905fc612a, type: 3}
+      value: {fileID: 280410645, guid: 2d1dfb3d142580f42bd947f905fc612a, type: 3}
     - time: 0.4
       value: {fileID: 900014523, guid: 2d1dfb3d142580f42bd947f905fc612a, type: 3}
     - time: 0.5
@@ -55,7 +55,7 @@ AnimationClip:
     - {fileID: -236810963, guid: 2d1dfb3d142580f42bd947f905fc612a, type: 3}
     - {fileID: 33054684, guid: 2d1dfb3d142580f42bd947f905fc612a, type: 3}
     - {fileID: 280410645, guid: 2d1dfb3d142580f42bd947f905fc612a, type: 3}
-    - {fileID: 746660822, guid: 2d1dfb3d142580f42bd947f905fc612a, type: 3}
+    - {fileID: 280410645, guid: 2d1dfb3d142580f42bd947f905fc612a, type: 3}
     - {fileID: 900014523, guid: 2d1dfb3d142580f42bd947f905fc612a, type: 3}
     - {fileID: 40635286, guid: 2d1dfb3d142580f42bd947f905fc612a, type: 3}
     - {fileID: -236810963, guid: 2d1dfb3d142580f42bd947f905fc612a, type: 3}
@@ -92,7 +92,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.5
-    functionName: ChngeState
+    functionName: ChangeState
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
