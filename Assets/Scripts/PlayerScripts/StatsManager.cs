@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class StatsManager : MonoBehaviour
 {
     public static StatsManager Instance;
-
+    public StatsUI StatsUI;
+    public TMP_Text healthText;
     [Header("Combat Stats")]
     public int damage;
     public float weaponRange;
@@ -27,5 +29,25 @@ public class StatsManager : MonoBehaviour
         else
             Destroy(gameObject);
     }
+
+    public void UpdateMaxHealth(int amount)
+    {
+        maxHealth += amount;
+        healthText.text = "HP:" + currentHealth + "/" + maxHealth;
+
+    }
+    public void UpdateHealth(int amount)
+    {
+        maxHealth += amount;
+        healthText.text = "HP:" + currentHealth + "/" + maxHealth;
+
+    }
+    public void UpdateSpeed(int amount)
+    {
+        speed += amount;
+        StatsUI.UpdateAllStats();
+
+    }
+
 
 }

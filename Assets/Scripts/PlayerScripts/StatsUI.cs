@@ -6,6 +6,7 @@ using UnityEngine;
 public class StatsUI : MonoBehaviour
 {
     public GameObject[] statsSlots;
+    public StatsUI statsUI;
     public CanvasGroup statsCanvas;
 
     private bool statsOpen = false;
