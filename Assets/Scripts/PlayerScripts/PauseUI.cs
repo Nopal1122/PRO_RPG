@@ -7,6 +7,7 @@ public class PauseUI : MonoBehaviour
 {
     public CanvasGroup pauseCanvas;
     private bool pauseOpen = false;
+    public CanvasGroup statsOpen;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,7 @@ public class PauseUI : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetButtonDown("Togglepause"))
+        if (Input.GetButtonDown("Togglepause") && statsOpen.alpha == 0)
             if (pauseOpen)
             {
                 Time.timeScale = 1;

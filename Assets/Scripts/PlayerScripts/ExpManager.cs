@@ -16,11 +16,12 @@ public class ExpManager : MonoBehaviour
 
     private void Start()
     {
-        UpdateUI();
+            UpdateUI();
     }
 
     private void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Return))
         {
             GainExperience(2);
@@ -59,4 +60,6 @@ public class ExpManager : MonoBehaviour
         expSlider.value = currentExp;
         currentLevelText.text = "Level: " + level;
     }
+
+    
 }

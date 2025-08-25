@@ -9,7 +9,7 @@ public class StatsUI : MonoBehaviour
     public StatsUI statsUI;
     public CanvasGroup statsCanvas;
 
-    private bool statsOpen = false;
+    public bool statsOpen = false;
 
     private void Start()
     {
