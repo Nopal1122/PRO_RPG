@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseUI : MonoBehaviour
 {
@@ -30,5 +31,28 @@ public class PauseUI : MonoBehaviour
             }
         pauseCanvas.interactable = pauseOpen;
         pauseCanvas.blocksRaycasts = pauseOpen;
+    }
+
+    public void TogglePausePanel()
+    {
+        if (pauseOpen == true)
+        {
+            Time.timeScale = 1;
+            pauseCanvas.alpha = 0;
+            pauseOpen = false;
+        }
+        else
+        {
+            Time.timeScale = 0;
+            pauseCanvas.alpha = 1;
+            pauseOpen = true;
+        }
+        pauseCanvas.interactable = pauseOpen;
+        pauseCanvas.blocksRaycasts = pauseOpen;
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
