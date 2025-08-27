@@ -1,34 +1,62 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class Loot : MonoBehaviour
 {
-   public ItemSO itemSO;// Reference to the ItemSo scriptable object
+    [Header("Loot Settings")]
+    public ItemSO itemSO;          // ScriptableObject data item
+    public int quantity = 1;
+
+    [Header("Components")]
     public SpriteRenderer sr;
     public Animator anim;
 
-    public int quantity;
+    public bool canBePickedUp = true;
+
     public static event Action<ItemSO, int> OnItemLooted;
 
     private void OnValidate()
     {
-        if (itemSO == null)
-            return;
-
-            sr.sprite = itemSO.icon;// Set the sprite of the SpriteRenderer to the icon of the ItemSo
-            this.name = itemSO.itemName; // Set the name of the GameObject to the item name
-
-
+        if (itemSO == null) return;
+        UpdateAppearance();
     }
-    public void OnTriggerEnter2D(Collider2D collision)
+
+    public void Initialize(ItemSO itemSO, int quantity)
+    {
+        this.itemSO = itemSO;
+        this.quantity = quantity;
+        canBePickedUp = false;
+        UpdateAppearance();
+    }
+
+    private void UpdateAppearance()
+    {
+        if (sr != null && itemSO != null)
+        {
+            sr.sprite = itemSO.icon;
+            gameObject.name = itemSO.itemName;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player") && canBePickedUp)
+        {
+            if (anim != null) anim.Play("LootPickup");
+
+            OnItemLooted?.Invoke(itemSO, quantity);
+
+            Destroy(gameObject, 0.5f); // tunggu animasi pickup dulu
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            anim.Play("LootPickup");
-            OnItemLooted?.Invoke(itemSO, quantity); // Invoke the event with the item and quantity
-            Destroy(gameObject, 0.5f); // Destroy the loot after a short delay to allow the animation to play
+            canBePickedUp = true;
         }
     }
 }

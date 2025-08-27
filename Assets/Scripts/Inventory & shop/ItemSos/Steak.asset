@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Steak
   itemDescription: Yummy
-  icon: {fileID: -9166977658130966330, guid: e035009415ce1dd478fd510f6b8b5fa6, type: 3}
+  icon: {fileID: -1027005022, guid: 713bb62985071de4aa46e59c21659912, type: 3}
   isGold: 0
   health: 0
   maxHealth: 0

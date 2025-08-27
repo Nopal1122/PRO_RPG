@@ -10,6 +10,7 @@ public class ItemSO: ScriptableObject
     public Sprite icon;
 
     public bool isGold; // Indicates if the item is gold or not
+    public int stackSize = 3; // Maximum stack size for the item
 
     [Header("Stats")]
     public int health;
