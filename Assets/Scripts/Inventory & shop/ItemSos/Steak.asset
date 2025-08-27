@@ -16,8 +16,9 @@ MonoBehaviour:
   itemDescription: Yummy
   icon: {fileID: -1027005022, guid: 713bb62985071de4aa46e59c21659912, type: 3}
   isGold: 0
+  stackSize: 3
   health: 0
-  maxHealth: 0
+  maxHealth: 5
   damage: 0
   speed: 0
   duration: 0
