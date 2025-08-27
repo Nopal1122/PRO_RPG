@@ -16,26 +16,26 @@ public class StatsUI : MonoBehaviour
         UpdateAllStats();
     }
 
-    private void Update()
-    {
-        if (Input.GetButtonDown("ToggleStats"))
-            if (statsOpen)
-            {
-                Time.timeScale = 1;
-                UpdateAllStats();
-                statsCanvas.alpha = 0;
-                statsCanvas.blocksRaycasts = false;
-                statsOpen = false;
-            }
-            else
-            {
-                Time.timeScale = 0;
-                UpdateAllStats();
-                statsCanvas.alpha = 1;
-                statsCanvas.blocksRaycasts = true;
-                statsOpen = true;
-            }
-    }
+    // private void Update()
+    // {
+    //     if (Input.GetButtonDown("ToggleStats"))
+    //         if (statsOpen)
+    //         {
+    //             Time.timeScale = 1;
+    //             UpdateAllStats();
+    //             statsCanvas.alpha = 0;
+    //             statsCanvas.blocksRaycasts = false;
+    //             statsOpen = false;
+    //         }
+    //         else
+    //         {
+    //             Time.timeScale = 0;
+    //             UpdateAllStats();
+    //             statsCanvas.alpha = 1;
+    //             statsCanvas.blocksRaycasts = true;
+    //             statsOpen = true;
+    //         }
+    // }
 
     public void ToggleStatsPanel()
     {
