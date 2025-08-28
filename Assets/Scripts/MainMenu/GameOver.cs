@@ -7,15 +7,15 @@ public class GameOver : MonoBehaviour
 {
     public GameObject gameOverMenu;
 
-    private void OnEnable()
-    {
-        PlayerHealh.OnPlayerDeath += EnableGameOverMenu;
-    }
+    // private void OnEnable()
+    // {
+    //     PlayerHealh.OnPlayerDeath += EnableGameOverMenu;
+    // }
 
-    private void OnDisable()
-    {
-        PlayerHealh.OnPlayerDeath -= EnableGameOverMenu;
-    }
+    // private void OnDisable()
+    // {
+    //     PlayerHealh.OnPlayerDeath -= EnableGameOverMenu;
+    // }
 
     public void EnableGameOverMenu()
     {
