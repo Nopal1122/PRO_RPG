@@ -73,5 +73,7 @@ public class ExpManager : MonoBehaviour
             statPointsText.text = "Available Points: " + statPoints;
         }
     }
+
+    
     
 }

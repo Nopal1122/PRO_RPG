@@ -33,10 +33,6 @@ public class Player_Combat : MonoBehaviour
 
     public void DealDamage()
     {
-        // Tambah damage + update UI
-        StatsManager.Instance.damage += 1;
-        statsUI.UpdateDamage();
-
         // Cek musuh di sekitar
         if (attackPoint == null) return;
 

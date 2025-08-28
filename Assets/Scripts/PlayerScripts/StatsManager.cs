@@ -48,7 +48,6 @@ public class StatsManager : MonoBehaviour
     {
         speed += amount;
         StatsUI.UpdateAllStats();
-
     }
 
 
