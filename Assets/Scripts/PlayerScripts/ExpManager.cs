@@ -12,11 +12,16 @@ public class ExpManager : MonoBehaviour
     public float expGrowthMultipler = 1.2f; //Add 20% more EXP to level each time
     public Slider expSlider;
     public TMP_Text currentLevelText;
+    public TMP_Text statPointsText;
+
+    //Stat points
+    public int statPoints;
+    public int statPointsPerLevel = 5;
 
 
     private void Start()
     {
-            UpdateUI();
+        UpdateUI();
     }
 
     private void Update()
@@ -52,6 +57,9 @@ public class ExpManager : MonoBehaviour
         level++;
         currentExp -= expToLevel;
         expToLevel = Mathf.RoundToInt(expToLevel * expGrowthMultipler);
+
+        //stats
+        statPoints += statPointsPerLevel;
     }
 
     public void UpdateUI()
@@ -59,7 +67,11 @@ public class ExpManager : MonoBehaviour
         expSlider.maxValue = expToLevel;
         expSlider.value = currentExp;
         currentLevelText.text = "Level: " + level;
-    }
 
+        if (statPointsText != null)
+        {
+            statPointsText.text = "Available Points: " + statPoints;
+        }
+    }
     
 }

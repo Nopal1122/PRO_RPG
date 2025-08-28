@@ -8,6 +8,7 @@ public class StatsUI : MonoBehaviour
     public GameObject[] statsSlots;
     public StatsUI statsUI;
     public CanvasGroup statsCanvas;
+    public ExpManager expManager;
 
     public bool statsOpen = false;
 
@@ -51,12 +52,11 @@ public class StatsUI : MonoBehaviour
             statsCanvas.alpha = 1;
             statsOpen = true;
         }
-    
-    statsCanvas.interactable = statsOpen;
-    statsCanvas.blocksRaycasts = statsOpen;
 
-}
+        statsCanvas.interactable = statsOpen;
+        statsCanvas.blocksRaycasts = statsOpen;
 
+    }
 
     public void UpdateDamage()
     {
@@ -66,6 +66,30 @@ public class StatsUI : MonoBehaviour
     {
         statsSlots[1].GetComponentInChildren<TMP_Text>().text = "Speed: " + StatsManager.Instance.speed;
     }
+
+    public void IncreaseDamage()
+    {
+        if (expManager.statPoints > 0)
+        {
+            StatsManager.Instance.damage++;
+            expManager.statPoints--;
+            expManager.UpdateUI();
+            UpdateDamage();
+        }
+    }
+
+        public void IncreaseSpeed()
+    {
+        if (expManager.statPoints > 0)
+        {
+            StatsManager.Instance.speed++;
+            expManager.statPoints--;
+            expManager.UpdateUI();
+            UpdateSpeed();
+        }
+    }
+
+
 
     public void UpdateAllStats()
     {
