@@ -1,10 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+
 public class PlayerHealh : MonoBehaviour
 {
-
+    public static event Action OnPlayerDeath;
     public TMP_Text healthText;
     public Animator healtTextAnim;
 
@@ -21,7 +23,7 @@ public class PlayerHealh : MonoBehaviour
         healthText.text = "HP: " + StatsManager.Instance.currentHealth + "/" + StatsManager.Instance.maxHealth;
         if (StatsManager.Instance.currentHealth <= 0)
         {
-            gameObject.SetActive(false);
+            OnPlayerDeath?.Invoke();
         }
     }
 }

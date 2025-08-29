@@ -17,6 +17,9 @@ public class PauseUI : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        //Check jika GameOver menu terbuka atau tidak
+        if (GameState.isGameOver) return;
+
         if (Input.GetButtonDown("Togglepause") && statsOpen.alpha == 0)
             if (pauseOpen)
             {
