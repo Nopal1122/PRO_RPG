@@ -5,7 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    //Play Button
+
+    [Header("UI Panels")]
+    public CanvasGroup optionsCanvas;
+
+    private bool optionsOpen = false;
+
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -13,7 +18,14 @@ public class MainMenu : MonoBehaviour
 
     public void Options()
     {
-        Debug.Log("Option Button Clicked");
+        optionsOpen = !optionsOpen;
+
+        optionsCanvas.alpha = optionsOpen ? 1 : 0;
+        optionsCanvas.interactable = optionsOpen;
+        optionsCanvas.blocksRaycasts = optionsOpen;
+
+        Debug.Log("Options Panel " + (optionsOpen ? "Opened" : "Closed"));
+        
     }
 
     //Quit Button
