@@ -8,6 +8,7 @@ public class PauseUI : MonoBehaviour
     public CanvasGroup pauseCanvas;
     private bool pauseOpen = false;
     public CanvasGroup statsOpen;
+    public CanvasGroup optionCanvas;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,7 @@ public class PauseUI : MonoBehaviour
         //Check jika GameOver menu terbuka atau tidak
         if (GameState.isGameOver) return;
 
-        if (Input.GetButtonDown("Togglepause") && statsOpen.alpha == 0)
+        if (Input.GetButtonDown("Togglepause") && statsOpen.alpha == 0 &&  optionCanvas.alpha == 0)
             if (pauseOpen)
             {
                 Time.timeScale = 1;

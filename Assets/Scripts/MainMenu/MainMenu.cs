@@ -18,7 +18,6 @@ public class MainMenu : MonoBehaviour
 
     private bool optionsOpen = false;
 
-
     private void start()
     {
         LoadVolume();
