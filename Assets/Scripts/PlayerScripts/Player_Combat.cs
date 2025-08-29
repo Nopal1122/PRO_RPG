@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 
 public class Player_Combat : MonoBehaviour
 {
@@ -42,8 +43,10 @@ public class Player_Combat : MonoBehaviour
             enemyLayers
         );
 
-        if (enemies.Length > 0)
+        foreach (Collider2D enemy in enemies)
         {
+             if (enemy.isTrigger) continue; // Skip detection zones
+
             Enemy_Health enemyHealth = enemies[0].GetComponent<Enemy_Health>();
             if (enemyHealth != null)
                 enemyHealth.changeHealth(-StatsManager.Instance.damage);
