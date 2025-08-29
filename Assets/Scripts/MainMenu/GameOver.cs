@@ -23,7 +23,6 @@ public class GameOver : MonoBehaviour
 
     private void OnDisable()
     {
-        GameState.isGameOver = false;
         PlayerHealh.OnPlayerDeath -= EnableGameOverMenu;
     }
 
@@ -44,11 +43,27 @@ public class GameOver : MonoBehaviour
 
     public void RestartLevel()
     {
+        //Reset Player health to max
+        StatsManager.Instance.ResetHealth();
+
+        GameState.isGameOver = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        gameOverCanvas.alpha = 0f;               
+        gameOverCanvas.interactable = false;      
+        gameOverCanvas.blocksRaycasts = false;
     }
 
     public void BackToMenu()
     {
+    if (GameManager.Instance != null)
+    {
+        GameManager.Instance.FullReset();
+    }
+    else
+    {
+        // Fallback if GameManager is missing
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
+    }
     }
 }

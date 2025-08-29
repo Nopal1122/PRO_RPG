@@ -39,7 +39,7 @@ public class StatsManager : MonoBehaviour
     public void UpdateHealth(int amount)
     {
         currentHealth += amount;
-        if(currentHealth >= maxHealth)
+        if (currentHealth >= maxHealth)
             currentHealth = maxHealth;
         healthText.text = "HP:" + currentHealth + "/" + maxHealth;
 
@@ -50,5 +50,10 @@ public class StatsManager : MonoBehaviour
         StatsUI.UpdateAllStats();
     }
 
+    public void ResetHealth()
+    {
+        currentHealth = maxHealth;
+        healthText.text = "HP: " + currentHealth + "/" + maxHealth;
+    }
 
 }

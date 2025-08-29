@@ -57,6 +57,17 @@ public class PauseUI : MonoBehaviour
 
     public void BackToMenu()
     {
+        if (GameManager.Instance != null)
+    {
+        GameManager.Instance.FullReset();
+    }
+    else
+    {
+        // Fallback if GameManager is missing
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
+    }
+
+    
 }

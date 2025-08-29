@@ -46,4 +46,46 @@ public class GameManager : MonoBehaviour
         }
         Destroy(gameObject);
     }
+
+    public void FullReset()
+    {
+        // Reset runtime data
+        ResetGameState();
+        //ResetStats
+        ResetStats();
+        // Destroy all persistent objects
+        foreach (GameObject obj in persistentObjects)
+        {
+            if (obj != null)
+            {
+                Destroy(obj);
+            }
+        }
+
+        // Destroy GameManager itself
+        Destroy(gameObject);
+
+        // Optional: Clear static references
+        Instance = null;
+
+        // Load Main Menu
+        Time.timeScale = 1;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+    }
+
+    public void ResetGameState()
+    {
+        GameState.isGameOver = false;
+
+        Time.timeScale = 1;
+    }
+
+    public void ResetStats()
+    {
+        StatsManager.Instance.maxHealth = 20;
+        StatsManager.Instance.ResetHealth();
+        StatsManager.Instance.damage = 1;
+        StatsManager.Instance.speed = 5;
+    }
+
 }
