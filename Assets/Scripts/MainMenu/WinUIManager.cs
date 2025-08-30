@@ -18,6 +18,7 @@ public class WinUIManager : MonoBehaviour
 
     public void ShowWinScreen()
     {
+        SoundManager.Instance.PlaySound2D("Win");
         winCanvas.alpha = 1;
         winCanvas.interactable = true;
         winCanvas.blocksRaycasts = true;
