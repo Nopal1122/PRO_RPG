@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Purple Bob
   m_EditorClassIdentifier: 
   ActorName: Purple Bob
-  portrait: {fileID: -546809714002888082, guid: f06e3d32e688b1b46a572ca436d73d08, type: 3}
+  portrait: {fileID: 286469726, guid: d307f359fbe20e84494102035aa12b1d, type: 3}
