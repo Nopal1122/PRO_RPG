@@ -295,6 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68ddc191e7041fa4bab2a796898858ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBoss: 0
   expReward: 3
   currentHealth: 5
   maxHealth: 5
@@ -561,6 +562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68ddc191e7041fa4bab2a796898858ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBoss: 0
   expReward: 3
   currentHealth: 5
   maxHealth: 5
@@ -1279,6 +1281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68ddc191e7041fa4bab2a796898858ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBoss: 0
   expReward: 3
   currentHealth: 5
   maxHealth: 5
@@ -35369,6 +35372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68ddc191e7041fa4bab2a796898858ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBoss: 0
   expReward: 3
   currentHealth: 5
   maxHealth: 5
@@ -41937,6 +41941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68ddc191e7041fa4bab2a796898858ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBoss: 0
   expReward: 3
   currentHealth: 5
   maxHealth: 5
@@ -50182,6 +50187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68ddc191e7041fa4bab2a796898858ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBoss: 0
   expReward: 3
   currentHealth: 5
   maxHealth: 5
@@ -60402,7 +60408,7 @@ MonoBehaviour:
   SceneToLoad: RPG4
   fadeAnim: {fileID: 11701233}
   fadeTime: 1
-  newPlayerPosition: {x: -41.08, y: -12.45}
+  newPlayerPosition: {x: 7.52, y: -8.35}
 --- !u!61 &1833157886
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -61017,6 +61023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68ddc191e7041fa4bab2a796898858ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBoss: 0
   expReward: 3
   currentHealth: 5
   maxHealth: 5

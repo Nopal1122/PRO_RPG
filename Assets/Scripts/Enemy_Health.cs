@@ -34,7 +34,6 @@ public class Enemy_Health : MonoBehaviour
 
             if (isBoss)
             {
-                GameState.isGameOver = true;
                 StartCoroutine(TriggerWinSequence());
             }
 
