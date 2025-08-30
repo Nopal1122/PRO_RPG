@@ -40,6 +40,7 @@ public class PauseUI : MonoBehaviour
 
     public void TogglePausePanel()
     {
+        SoundManager.Instance.PlaySound2D("DigitalClick");
         if (pauseOpen == true)
         {
             Time.timeScale = 1;
@@ -58,16 +59,17 @@ public class PauseUI : MonoBehaviour
 
     public void BackToMenu()
     {
+        SoundManager.Instance.PlaySound2D("DigitalClick");
         if (GameManager.Instance != null)
-    {
-        GameManager.Instance.FullReset();
-    }
-    else
-    {
-        // Fallback if GameManager is missing
-        Time.timeScale = 1;
-        SceneManager.LoadScene(0);
-    }
+        {
+            GameManager.Instance.FullReset();
+        }
+        else
+        {
+            // Fallback if GameManager is missing
+            Time.timeScale = 1;
+            SceneManager.LoadScene(0);
+        }
     }
 
     

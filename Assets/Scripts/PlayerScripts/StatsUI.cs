@@ -40,6 +40,7 @@ public class StatsUI : MonoBehaviour
 
     public void ToggleStatsPanel()
     {
+        SoundManager.Instance.PlaySound2D("DigitalClick");
         if (statsOpen)
         {
             UpdateAllStats();
@@ -71,6 +72,7 @@ public class StatsUI : MonoBehaviour
     {
         if (expManager.statPoints > 0)
         {
+            SoundManager.Instance.PlaySound2D("DigitalClick");
             StatsManager.Instance.damage++;
             expManager.statPoints--;
             expManager.UpdateUI();
@@ -80,6 +82,7 @@ public class StatsUI : MonoBehaviour
 
         public void IncreaseSpeed()
     {
+        SoundManager.Instance.PlaySound2D("DigitalClick");
         if (expManager.statPoints > 0)
         {
             StatsManager.Instance.speed++;

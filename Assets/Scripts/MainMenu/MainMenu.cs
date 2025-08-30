@@ -18,19 +18,23 @@ public class MainMenu : MonoBehaviour
 
     private bool optionsOpen = false;
 
-    private void start()
+    private void Start()
     {
         LoadVolume();
+        MusicManager.Instance.PlayMusic("Track1");
     }
 
     // ======== Buttons =========
     public void PlayGame()
     {
+        SoundManager.Instance.PlaySound2D("StartGame");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        MusicManager.Instance.PlayMusic("Track1");
     }
 
     public void Options()
     {
+        SoundManager.Instance.PlaySound2D("DigitalClick");
         optionsOpen = !optionsOpen;
 
         optionsCanvas.alpha = optionsOpen ? 1 : 0;
@@ -43,6 +47,7 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
+        SoundManager.Instance.PlaySound2D("DigitalClick");
         Application.Quit();
     }
 

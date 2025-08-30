@@ -19,6 +19,7 @@ public class Enemy_Health : MonoBehaviour
     }
     public void changeHealth(int amount)
     {
+        SoundManager.Instance.PlaySound2D("HitEnemy");
         currentHealth += amount;
         if (currentHealth > maxHealth)
         {

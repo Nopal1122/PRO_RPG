@@ -37,6 +37,7 @@ public class InventoryManager : MonoBehaviour
     {
         if (itemSO.isGold)
         {
+            SoundManager.Instance.PlaySound2D("GetCoin");
             gold += quantity;
             goldText.text = gold.ToString(); // update UI gold
             return;

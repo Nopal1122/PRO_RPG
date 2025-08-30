@@ -18,6 +18,7 @@ public class Enemy_combat : MonoBehaviour
 
         if(hits.Length > 0)
         {
+                    SoundManager.Instance.PlaySound2D("Hurt");
                     hits[0].GetComponent<PlayerHealh>().ChangeHealth(-damage);
                     hits[0].GetComponent<PlayerMovement>().KnockBack(transform,knockBackForce,stunTime);
 

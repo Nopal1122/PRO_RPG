@@ -25,6 +25,7 @@ public class Loot : MonoBehaviour
 
     public void Initialize(ItemSO itemSO, int quantity)
     {
+        
         this.itemSO = itemSO;
         this.quantity = quantity;
         canBePickedUp = false;

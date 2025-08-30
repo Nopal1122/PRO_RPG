@@ -27,6 +27,7 @@ public class Player_Combat : MonoBehaviour
     {
         if (timer <= 0)
         {
+            SoundManager.Instance.PlaySound2D("Attack");
             anim.SetBool("isAttacking", true);
             timer = cooldown;
         }

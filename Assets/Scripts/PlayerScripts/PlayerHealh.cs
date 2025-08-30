@@ -23,6 +23,7 @@ public class PlayerHealh : MonoBehaviour
         healthText.text = "HP: " + StatsManager.Instance.currentHealth + "/" + StatsManager.Instance.maxHealth;
         if (StatsManager.Instance.currentHealth <= 0)
         {
+            SoundManager.Instance.PlaySound2D("Dead");
             OnPlayerDeath?.Invoke();
         }
     }
