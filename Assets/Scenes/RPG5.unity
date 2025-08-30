@@ -36599,11 +36599,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 21.576084, y: 22.181095}
-      - {x: -36.150757, y: 21.256588}
-      - {x: -38.491554, y: -37.91606}
-      - {x: -29.359127, y: -43.824306}
-      - {x: 21.916142, y: -43.544483}
+    - - {x: 21.576084, y: 14.890793}
+      - {x: -31.562763, y: 14.315104}
+      - {x: -31.660767, y: -10.994892}
+      - {x: -18.295597, y: -10.523024}
+      - {x: 21.602747, y: -10.919579}
       - {x: 21.598026, y: 0.9232287}
 --- !u!4 &1156042494
 Transform:
@@ -37283,10 +37283,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e14a312440a70242a952e10b29cb83b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToLoad: RPG
+  SceneToLoad: RPG4
   fadeAnim: {fileID: 798857318}
   fadeTime: 1
-  newPlayerPosition: {x: 0, y: 0}
+  newPlayerPosition: {x: -38.99, y: -12.21}
 --- !u!61 &1433684545
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -37300,7 +37300,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.067765}
+  m_Offset: {x: 0, y: -10.544412}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -37311,7 +37311,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 7.313742}
+  m_Size: {x: 1, y: 30.5381}
   m_EdgeRadius: 0
 --- !u!4 &1433684546
 Transform:
@@ -37321,7 +37321,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1433684543}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.81, y: 2.09, z: 0.24415153}
+  m_LocalPosition: {x: -44, y: 2.09, z: 0.24415153}
   m_LocalScale: {x: 1.625, y: 1.475, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
