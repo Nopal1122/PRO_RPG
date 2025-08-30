@@ -697,6 +697,9 @@ MonoBehaviour:
   - groupID: Dead
     clips:
     - {fileID: 8300000, guid: 4e088f405d07a134a873f18b438046ed, type: 3}
+  - groupID: Win
+    clips:
+    - {fileID: 8300000, guid: 41bd5b54f5ac74447a85e10636ea824b, type: 3}
 --- !u!114 &398971003
 MonoBehaviour:
   m_ObjectHideFlags: 0
