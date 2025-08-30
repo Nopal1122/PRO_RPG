@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ActorSO
   m_EditorClassIdentifier: 
   ActorName: MC
-  portrait: {fileID: 0}
+  portrait: {fileID: -350380338, guid: 3014670a5f201ed4a931637a601e5fda, type: 3}
