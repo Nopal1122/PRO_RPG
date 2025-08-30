@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 5445256343768142460}
   - component: {fileID: 5445256343768142461}
   m_Layer: 6
-  m_Name: Enemy_Zombie 2
+  m_Name: Enemy_Dead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,7 +114,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e687cf6efd55b2e4c8fa7822029e5187, type: 3}
+  m_Sprite: {fileID: 1797751495, guid: 3dbd90edabafc0a4cb75b24412676c85, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
